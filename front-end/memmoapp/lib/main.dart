@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:memmoapp/pages/home_page.dart';
-import 'package:memmoapp/utilities/routes.dart';
+import 'package:memmoapp/utilities/routes.dart' as routes;
 import 'package:memmoapp/utilities/theme.dart';
 import 'utilities/dependencies.dart' as dependencies;
 
@@ -20,8 +20,9 @@ class MyApp extends StatelessWidget {
       theme: customTheme,
       debugShowCheckedModeBanner: false,
       initialBinding: dependencies.InitialBindings(),
-      getPages: getPages,
+      getPages: routes.getPages,
       home: const HomePage(),
+      defaultTransition: Transition.fadeIn,
     );
   }
 }

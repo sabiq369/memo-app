@@ -76,6 +76,7 @@ class _CreateAccountDialogState extends State<CreateAccountDialog> {
         ),
         const SizedBox(height: 40),
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
                 onPressed: () {
@@ -106,9 +107,7 @@ class _CreateAccountDialogState extends State<CreateAccountDialog> {
                   }
                 },
                 child: Text('Create')),
-            SizedBox(
-              height: 20,
-            ),
+            SizedBox(width: 20),
             ElevatedButton(
                 onPressed: () {
                   Navigator.pop(context);
@@ -171,7 +170,7 @@ class _CreateAccountDialogState extends State<CreateAccountDialog> {
                         },
                         child: Text('Try Again'),
                       ),
-                      SizedBox(height: 20),
+                      SizedBox(width: 20),
                       ElevatedButton(
                           onPressed: () {
                             Navigator.pop(context);

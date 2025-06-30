@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
               gradient: RadialGradient(
                 center: Alignment.topLeft,
                 radius: 1,
-                colors: [Colors.white, Color(0xff5deb7), Colors.white],
+                colors: [Colors.white, Color(0xff5dedb7), Colors.white],
               ),
             ),
           ),

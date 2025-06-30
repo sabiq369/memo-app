@@ -18,8 +18,8 @@ ThemeData customTheme = ThemeData(
       titleLarge: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
     ),
     scaffoldBackgroundColor: Colors.white,
-    dialogTheme: DialogTheme(
-      surfaceTintColor: Colors.transparent,
-      backgroundColor: Color(0xff5dedb7),
-    ),
+    // dialogTheme: DialogTheme(
+    //
+    //     surfaceTintColor: Colors.transparent,
+    //     backgroundColor: Color(0xff5dedb7)),
     colorSchemeSeed: Color(0xff1679ab));

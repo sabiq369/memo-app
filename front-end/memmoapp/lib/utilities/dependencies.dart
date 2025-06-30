@@ -41,9 +41,7 @@ class AuthController extends GetxController {
       var signInData = await http.post(
         signInUrl,
         headers: {'Content-Type': 'application/json'},
-        body: jsonEncode(
-          {'email': email, 'password': password},
-        ),
+        body: jsonEncode({'email': email, 'password': password}),
       );
       if (signInData.statusCode == 200) {
         final jsonSignInData = jsonDecode(signInData.body);
@@ -52,6 +50,7 @@ class AuthController extends GetxController {
         signedInEmail.value = jsonSignInData['email'];
         memos.clear();
         memos.addAll(jsonSignInData['memos']);
+        print('|||||||||||||');
         return 'success';
       } else {
         return signInData.body.toString();
@@ -91,7 +90,7 @@ class AuthController extends GetxController {
   Future<String> deleteMemo(int index) async {
     try {
       var deleteMemoData = await http.post(
-        addMemoUrl,
+        deleteMemoUrl,
         headers: {
           'Content-Type': 'application/json',
           'x-auth-token': token.value,

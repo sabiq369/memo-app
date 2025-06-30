@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const joi = require('joi');
 const jwt = require('jsonwebtoken');
 const Joi = require('joi');
 require('dotenv').config();
@@ -44,9 +43,9 @@ const User = mongoose.model('User',mongoSchema);
 function validateUser(user){
     const Schema = Joi.object({
         firstName: Joi.string().required(),
-        lastName: Joi.String().required(),
-        email: Joi.String().email().required(),
-        password: Joi.String().required(),
+        lastName: Joi.string().required(),
+        email: Joi.string().email().required(),
+        password: Joi.string().required(),
     });
     return Schema.validate(user);
 }

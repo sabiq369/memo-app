@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:memmoapp/pages/memo_page.dart';
 import 'package:memmoapp/utilities/dependencies.dart' as dependencies;
 
 class SignInDialog extends StatefulWidget {
@@ -17,11 +18,13 @@ class _SignInDialogState extends State<SignInDialog> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: status.value == 'credentials'
-          ? credentialsWidget()
-          : status.value == 'signing-in'
-              ? signingInWidget()
-              : const SizedBox(),
+      body: Obx(
+        () => status.value == 'credentials'
+            ? credentialsWidget()
+            : status.value == 'signing-in'
+                ? signingInWidget()
+                : const SizedBox(),
+      ),
     );
   }
 
@@ -60,6 +63,7 @@ class _SignInDialogState extends State<SignInDialog> {
         ),
         const SizedBox(height: 40),
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
               onPressed: () {
@@ -149,7 +153,7 @@ class _SignInDialogState extends State<SignInDialog> {
                         },
                         child: Text('Try Again'),
                       ),
-                      SizedBox(height: 20),
+                      SizedBox(width: 20),
                       ElevatedButton(
                           onPressed: () {
                             Navigator.pop(context);
