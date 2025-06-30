@@ -82,8 +82,14 @@ class _MemoPageState extends State<MemoPage> {
               constraints: BoxConstraints(maxWidth: 500),
               child: Obx(
                 () => Get.find<dependencies.AuthController>().memos.isEmpty
-                    ? Center(
-                        child: Text('No memos yet'),
+                    ? ListView.builder(
+                        itemCount: 0,
+                        controller: scrollController,
+                        itemBuilder: (context, index) {
+                          return Center(
+                            child: Text('No memos yet'),
+                          );
+                        },
                       )
                     : ListView.builder(
                         controller: scrollController,

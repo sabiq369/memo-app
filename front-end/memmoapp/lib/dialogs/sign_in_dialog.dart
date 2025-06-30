@@ -59,6 +59,7 @@ class _SignInDialogState extends State<SignInDialog> {
           child: TextFormField(
             decoration: InputDecoration(hintText: 'Password'),
             controller: passwordController,
+            obscureText: true,
           ),
         ),
         const SizedBox(height: 40),

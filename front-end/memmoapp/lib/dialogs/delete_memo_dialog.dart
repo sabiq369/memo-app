@@ -47,7 +47,7 @@ class _DeleteMemoDialogState extends State<DeleteMemoDialog> {
                 },
                 child: Text('Delete'),
               ),
-              SizedBox(height: 20),
+              SizedBox(width: 20),
               ElevatedButton(
                   onPressed: () {
                     Navigator.pop(context);

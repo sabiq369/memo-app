@@ -72,6 +72,7 @@ class _CreateAccountDialogState extends State<CreateAccountDialog> {
           child: TextFormField(
             decoration: const InputDecoration(hintText: 'Password'),
             controller: passwordController,
+            obscureText: true,
           ),
         ),
         const SizedBox(height: 40),

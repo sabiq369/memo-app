@@ -35,10 +35,13 @@ class _AddMemoDialogState extends State<AddMemoDialog> {
             width: 400,
             child: TextFormField(
               controller: memoController,
+              autofocus: true,
               decoration: InputDecoration(
                 hintText: 'Type something...',
               ),
-              maxLines: null,
+              minLines: 1,
+              maxLines: 15,
+              keyboardType: TextInputType.multiline,
             ),
           ),
           SizedBox(height: 30),

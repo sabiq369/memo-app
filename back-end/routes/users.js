@@ -45,8 +45,16 @@ router.post('/sign-in', async (req, res) => {
     return res.send(response);
 });
 
-//Add memo
-router.post('/add-memo', async (req, res) => {
+//Add memo  
+function validateMemo(content) {
+    const schema = Joi.object({
+        content: Joi.string().required(),
+    });
+    return schema.validate(content);
+    
+}
+
+router.post('/add-memo',auth, async (req, res) => {
     const { error } = validateMemo(req.body);
     if (error) return res.status(400).send('Invalid add-memo request');
     const user = await User.findById(req.user._id);
